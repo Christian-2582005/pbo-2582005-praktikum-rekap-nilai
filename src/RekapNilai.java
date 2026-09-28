@@ -28,14 +28,14 @@ public class RekapNilai {
             }
 
             char grade;
-            if (nilai >= 60) {
-                grade = 'D';
-            } else if (nilai >= 70) {
-                grade = 'C';
+            if (nilai >= 90) {
+                grade = 'A';
             } else if (nilai >= 80) {
                 grade = 'B';
-            } else if (nilai >= 90) {
-                grade = 'A';
+            } else if (nilai >= 70) {
+                grade = 'C';
+            } else if (nilai >= 60) {
+                grade = 'D';
             } else {
                 grade = 'E';
             }
@@ -61,7 +61,8 @@ public class RekapNilai {
                 jumlahSah++;
             } while (nilai != SELESAI);
 
-            // jaga kasus belum ada nilai sah (langsung ketik -1) supaya tidak bagi nol
+            // menjaga kasus belum ada nilai sah, menggunakan double gar tidak perlu casting lagi dan langsung desimal
+            // (langsung ketik -1) supaya tidak bagi nol
             double rata = jumlahSah == 0 ? 0 : total / jumlahSah;
             String status = rata >= 60 ? "LULUS" : "TIDAK LULUS";
 
